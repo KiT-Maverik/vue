@@ -35,6 +35,13 @@ new Vue({
 <a :href="sample">It's a link</a>
 ``` 
 
+### 2-way data binding
+Позволяет привязать значение инпута к переменной инстанса.
+```html
+Все что пользователь введет в инпут будет сохранено в переменной инстанса "sample". 
+<input type="text" v-model="sample">
+``` 
+
 # Events
 При возникновения события будет выполнен код.
 ```html
@@ -43,4 +50,17 @@ new Vue({
 
 <!--Shorthand-->
 <div @click="logger">Click me</div>
+```
+
+### Event modifiers
+Модификаторы позволяют управлять обработчиками событий.
+```html
+<!--logger сработает только при первом нажатии-->
+<div @click.once="logger">Click me</div>
+```
+
+### Keyboard events
+События клавиатуры срабатывают когда пользователь вводит текст в инпут.
+```html
+<input type="text" @keyup="logger">
 ```
